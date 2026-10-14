@@ -1,3 +1,6 @@
 .DS_Store
 Thumbs.db
 .openai/*.local.json
+node_modules/
+.astro/
+dist/
