@@ -1,0 +1,237 @@
+/* Scale the actual interface, with a first screen that includes the navigation. */
+:root {
+  --gutter: clamp(24px, 3vw, 80px);
+  --header-height: clamp(80px, 6vw, 104px);
+  font-size: 16px;
+}
+
+.header, .hero, .section-inner {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: var(--gutter);
+}
+
+.header { height: var(--header-height); padding-block: 16px; gap: clamp(20px, 2.5vw, 48px); }
+.brand { width: clamp(160px, 12vw, 220px); }
+.brand img { width: 100%; height: auto; aspect-ratio: 4; }
+.brand > span { font-size: 8px; letter-spacing: 3px; }
+.header nav { gap: 8px; }
+.header nav a { font-size: 14px; padding: 12px 16px; }
+.button, .header-book { min-height: 48px; font-size: 15px; padding: 13px 22px; gap: 12px; }
+.round-link { width: 52px; height: 52px; }
+.button svg { width: 18px; height: 18px; }
+
+.hero {
+  /* The grid distributes available height without shrinking text or clipping it.
+     The content minimum allows unusually short windows to scroll naturally. */
+  height: calc(100svh - var(--header-height));
+  min-height: 650px;
+  display: grid;
+  grid-template-rows: auto minmax(274px, 1fr) auto;
+  row-gap: clamp(16px, 2svh, 28px);
+  padding-block: clamp(20px, 3svh, 40px);
+}
+.eyebrow { font-size: 12px; letter-spacing: 1.5px; margin-bottom: 16px; }
+.hero h1 { font-size: clamp(48px, 4.7vw, 100px); max-width: none; line-height: 1.08; letter-spacing: -.045em; }
+.hero-subline { margin-top: 18px; font-size: 17px; gap: 24px; }
+.hero-primary { min-height: 48px; }
+.hero-collage {
+  --side-left: clamp(190px, 17vw, 380px);
+  --side-right: clamp(220px, 19vw, 420px);
+  --collage-gap: clamp(16px, 1.6vw, 32px);
+  width: 100%;
+  height: 100%;
+  max-height: 680px;
+  min-height: 274px;
+  align-self: center;
+  grid-template-columns: var(--side-left) minmax(0, 1fr) var(--side-right);
+  gap: var(--collage-gap);
+  margin-top: 0;
+  padding-top: 64px;
+}
+.hero-treatment { height: 100%; min-height: 210px; border-radius: 14px; }
+.doctor-teaser { height: 100%; min-height: 210px; padding: clamp(14px, 1.2vw, 24px); border-radius: 12px; display: flex; flex-direction: column; }
+.teaser-heading { flex-shrink: 0; margin-bottom: 12px; gap: 10px; }
+.teaser-heading strong { font-size: clamp(22px, 1.6vw, 34px); max-width: none; white-space: nowrap; letter-spacing: -.8px; }
+.teaser-heading > span { font-size: clamp(10px, .8vw, 14px); }
+.doctor-teaser > img { flex: 1; min-height: 80px; height: 0; width: 100%; }
+.doctor-teaser > a { font-size: 14px; margin-top: 12px; min-height: 22px; flex-shrink: 0; }
+.symptom-widget { top: 0; right: calc(var(--side-right) + var(--collage-gap) + 24px); width: clamp(370px, 31vw, 580px); max-width: calc(100% - var(--side-left) - var(--side-right) - 2 * var(--collage-gap) - 24px); padding: 18px 20px; border-radius: 12px; }
+.symptom-widget summary { font-size: 15px; }
+.symptom-widget summary > span { width: 28px; height: 28px; }
+.symptom-tags { gap: 6px; margin-top: 12px; }
+.symptom-tags > a { font-size: 12px; padding: 8px 11px; }
+.treatment-label { bottom: 20px; left: 20px; gap: 8px; }
+.treatment-label > span { font-size: 12px; padding: 8px 12px; }
+.quick-links { padding: 16px; margin-bottom: 0; border-radius: 12px; }
+.quick-links > span { font-size: 11px; margin-bottom: 12px; }
+.quick-links > a { font-size: 14px; padding: 9px 12px; min-height: 38px; }
+.quick-links > p { font-size: 11px; margin-top: 12px; }
+.hero-foot { margin-top: 0; padding-top: 14px; font-size: 13px; }
+.hero-foot > a { font-size: 13px; }
+
+/* Consistent readable type and larger interactive controls throughout the page. */
+.section-inner { padding-block: clamp(64px, 6vw, 112px); }
+.section-heading { margin-bottom: 40px; }
+h2, .reviews-section h2, .faq-section h2 { font-size: clamp(34px, 2.8vw, 64px); letter-spacing: -.035em; }
+.section-description { font-size: 18px; max-width: 65ch; margin-top: 20px; }
+.section-caption { font-size: 14px; max-width: 250px; }
+.review-grid, .resource-grid, .care-bento { gap: clamp(20px, 2vw, 36px); }
+.review-grid figure { padding: clamp(26px, 2.3vw, 44px); border-radius: 12px; }
+.review-quote { font-size: 48px; }
+.review-grid blockquote { font-size: 18px; max-width: 56ch; margin: 20px 0 32px; }
+.review-grid strong { font-size: 15px; }
+.review-grid small { font-size: 13px; }
+.avatar { width: 42px; height: 42px; font-size: 12px; }
+.review-foot { font-size: 14px; margin-top: 30px; }
+.care-section .section-inner { padding-top: clamp(64px, 6vw, 112px); }
+.care-card { border-radius: 12px; }
+.feature-card > img { height: clamp(240px, 20vw, 410px); }
+.card-content, .feature-card .card-content, .small-card { padding: clamp(26px, 2.3vw, 44px); }
+.card-kicker { font-size: 12px; margin-bottom: 18px; }
+.card-content h3, .small-card h3 { font-size: clamp(26px, 1.9vw, 40px); }
+.care-card p, .doctor-copy > p:not(.eyebrow), .resource-grid p, .faq-list details p, .bio-details p { font-size: 17px; }
+.care-card p { max-width: 52ch; margin-top: 18px; }
+.card-actions { margin-top: 26px; gap: 20px; }
+.card-actions .button, .doctor-copy > .button, .faq-section .button { font-size: 15px; padding: 13px 20px; }
+.text-link, .resource-grid .text-link, .small-card .text-link { font-size: 14px; }
+.small-card { min-height: 310px; }
+.line-icon { margin-bottom: 28px; }
+.insurance-card { padding: 30px; gap: 20px; border-radius: 12px; }
+.insurance-card h3 { font-size: 24px; }
+.insurance-card p { font-size: 15px; }
+.doctor-layout { gap: clamp(48px, 8vw, 160px); }
+.doctor-copy > p:not(.eyebrow) { max-width: 64ch; margin-top: 24px; }
+.bio-details summary { font-size: 15px; padding: 20px 0; }
+.doctor-display { max-width: 440px; }
+.doctor-capsule { width: clamp(280px, 23vw, 430px); height: clamp(380px, 32vw, 580px); }
+.doctor-name strong { font-size: 18px; }
+.doctor-name > span { font-size: 14px; }
+.doctor-stamp { width: 110px; height: 110px; font-size: 10px; bottom: 100px; }
+.doctor-stamp strong { font-size: 15px; }
+.resource-grid article { border-radius: 12px; }
+.resource-image { height: clamp(240px, 20vw, 410px); }
+.resource-image > span { font-size: 11px; padding: 8px 12px; bottom: 18px; left: 20px; }
+.resource-grid article > div:last-child { padding: clamp(26px, 2.3vw, 44px); }
+.resource-grid h3 { font-size: clamp(24px, 1.8vw, 36px); }
+.resource-grid p { max-width: 56ch; }
+.resource-grid .text-link { margin-top: 26px; }
+.faq-section { padding: clamp(64px, 6vw, 112px) var(--gutter); }
+.faq-inner { max-width: 1040px; }
+.faq-section h2 { margin-bottom: 36px; }
+.faq-list summary { font-size: 18px; padding: 24px 0; }
+.faq-list details p { padding-bottom: 28px; }
+.footer { padding: clamp(64px, 6vw, 112px) var(--gutter) 30px; }
+.footer-layout { gap: clamp(48px, 8vw, 160px); }
+.booking-card { padding: clamp(32px, 3vw, 60px); border-radius: 14px; }
+.booking-card h2 { font-size: clamp(34px, 2.8vw, 64px); }
+.booking-card > p { font-size: 18px; max-width: 48ch; margin-top: 22px; }
+.booking-card .button { font-size: 17px; min-height: 52px; }
+.booking-card > span { font-size: 13px; margin-top: 18px; }
+.footer-info > a:not(.brand), .footer-info address { font-size: 17px; }
+.footer-info > p, .footer-info > a.text-link { font-size: 14px; }
+.footer-bottom { font-size: 12px; padding-top: 26px; margin-top: 56px; }
+
+@media (max-width: 1100px) {
+  .header { gap: 18px; flex-wrap: nowrap; }
+  .header-book { margin-left: auto; }
+  .menu-toggle { display: block; order: 3; flex-shrink: 0; border: 1px solid #d2d2d0; background: none; border-radius: 50%; width: 44px; height: 44px; padding: 12px; cursor: pointer; }
+  .menu-toggle > span { display: block; width: 18px; height: 1px; background: #252527; margin: 4px 0; }
+  .header nav { display: none; position: absolute; top: var(--header-height); left: 0; right: 0; background: var(--paper); box-shadow: 0 10px 20px #0002; padding: 18px var(--gutter) 24px; flex-direction: column; align-items: stretch; }
+  .header nav.open { display: flex; }
+  .header nav a { font-size: 16px; padding: 14px; justify-content: space-between; }
+  .hero h1 { font-size: clamp(44px, 5.3vw, 58px); }
+  .hero-collage { --side-left: 190px; --side-right: 210px; --collage-gap: 16px; }
+  .symptom-widget { width: 380px; }
+  .hero-foot { font-size: 12px; }
+  .hero-foot > a { font-size: 12px; }
+  .care-bento { grid-template-columns: 1fr 1fr; }
+  .insurance-card { grid-column: 1 / -1; }
+  .section-description { font-size: 17px; }
+}
+
+@media (min-width: 761px) and (max-height: 740px) {
+  .hero { min-height: 500px; padding-block: 14px; row-gap: 12px; grid-template-rows: auto minmax(230px, 1fr) auto; }
+  .hero h1 { font-size: clamp(36px, min(4vw, 7svh), 60px); }
+  .hero .eyebrow { font-size: 11px; margin-bottom: 10px; }
+  .hero-subline { margin-top: 12px; }
+  .hero-primary { min-height: 44px; padding-block: 11px; }
+  .hero-collage { padding-top: 54px; min-height: 230px; }
+  .hero-treatment, .doctor-teaser { min-height: 176px; }
+  .hero-foot { padding-top: 10px; }
+}
+
+@media (max-width: 760px) {
+  :root { --gutter: 20px; --header-height: 80px; }
+  .header { padding-block: 14px; gap: 12px; }
+  .brand { width: 155px; }
+  .header-book { font-size: 12px; padding: 10px 14px; }
+  .hero { height: auto; min-height: calc(100svh - var(--header-height)); grid-template-rows: auto auto auto; padding-block: 28px; row-gap: 28px; }
+  .hero h1 { font-size: clamp(36px, 7vw, 52px); line-height: 1.12; }
+  .eyebrow { font-size: 11px; }
+  .hero-subline { font-size: 16px; gap: 16px; flex-wrap: wrap; }
+  .hero-collage { height: auto; min-height: 0; max-height: none; grid-template-columns: 1fr 1.5fr; gap: 14px; padding-top: 0; }
+  .symptom-widget { position: relative; top: auto; right: auto; width: 100%; max-width: none; grid-column: 1 / -1; grid-row: 1; padding: 16px; }
+  .symptom-widget summary { font-size: 14px; }
+  .symptom-tags > a { font-size: 11px; }
+  .doctor-teaser { height: 270px; padding: 14px; grid-row: 2; }
+  .teaser-heading { display: block; }
+  .teaser-heading strong { font-size: 22px; }
+  .teaser-heading > span { font-size: 11px; margin-top: 6px; display: block; }
+  .doctor-teaser > a { font-size: 12px; }
+  .hero-treatment { height: 270px; min-height: 0; grid-row: 2; }
+  .treatment-label { bottom: 12px; left: 10px; right: 10px; }
+  .treatment-label > span { font-size: 10px; padding: 7px 9px; }
+  .quick-links { padding: 14px; gap: 8px; }
+  .quick-links > a { font-size: 12px; padding: 9px; gap: 8px; min-height: 44px; }
+  .quick-links > p { font-size: 11px; margin-top: 4px; }
+  .hero-foot { display: flex; flex-wrap: wrap; font-size: 12px; gap: 10px; }
+  .hero-foot > a { margin-top: 0; font-size: 13px; }
+  .section-inner { padding-block: 56px; }
+  .section-heading { margin-bottom: 28px; }
+  .section-caption { font-size: 13px; margin-top: 16px; }
+  h2, .reviews-section h2, .faq-section h2 { font-size: clamp(30px, 6vw, 42px); }
+  .section-description { font-size: 16px; margin-top: 16px; }
+  .review-grid, .resource-grid, .care-bento { grid-template-columns: 1fr; gap: 18px; }
+  .review-grid figure { padding: 26px; }
+  .review-grid blockquote { font-size: 17px; }
+  .review-foot { font-size: 12px; }
+  .care-section .section-inner { padding-top: 56px; }
+  .feature-card { grid-column: auto; grid-row: auto; }
+  .feature-card > img, .resource-image { height: 240px; }
+  .card-content, .feature-card .card-content, .small-card, .resource-grid article > div:last-child { padding: 26px; }
+  .card-content h3, .small-card h3 { font-size: 28px; }
+  .care-card p, .doctor-copy > p:not(.eyebrow), .resource-grid p, .faq-list details p, .bio-details p { font-size: 16px; }
+  .small-card { min-height: 270px; }
+  .insurance-card { grid-column: auto; padding: 24px; gap: 14px; }
+  .insurance-card h3 { font-size: 21px; }
+  .insurance-card p { font-size: 14px; }
+  .doctor-layout { grid-template-columns: 1fr; gap: 36px; }
+  .doctor-capsule { width: 250px; height: 340px; }
+  .doctor-stamp { width: 95px; height: 95px; left: -30px; bottom: 85px; }
+  .doctor-name strong { font-size: 17px; }
+  .resource-grid h3 { font-size: 26px; }
+  .faq-section { padding-block: 56px; }
+  .faq-list summary { font-size: 16px; padding: 22px 0; }
+  .footer { padding-block: 56px 24px; }
+  .footer-layout { grid-template-columns: 1fr; gap: 36px; }
+  .booking-card { padding: 28px; }
+  .booking-card h2 { font-size: 36px; }
+  .booking-card > p { font-size: 16px; }
+  .footer-info > a:not(.brand), .footer-info address { font-size: 16px; }
+  .footer-bottom { font-size: 11px; gap: 20px; }
+  .mobile-cta > a { font-size: 15px; min-height: 56px; }
+  .mobile-cta span { font-size: 12px; }
+  body { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 480px) {
+  .header-book { display: none; }
+  .menu-toggle { margin-left: auto; }
+  .hero-subline { flex-direction: column; align-items: flex-start; }
+  .hero-primary { min-height: 48px; }
+  .hero h1 { font-size: clamp(34px, 9.4vw, 44px); }
+  .quick-links > a { font-size: 11px; padding-inline: 8px; }
+  .treatment-label > span:last-child { display: none; }
+}

@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/dm-sans';
 import '../styles/reference.css';
+import '../styles/responsive.css';
 import '../styles/motion.css';
 import Icon from './Icon.astro';
 const reviews = [
@@ -44,7 +45,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'MedicalBusiness', n
       </header>
       <main id="main">
         <section class="hero">
-          <div class="hero-heading"><p class="eyebrow"><span></span> SOUTH BURLINGTON, VERMONT</p><h1>Feel better. Move better.<br />With care that’s <span>truly yours.</span></h1><div class="hero-subline"><p>Enjoy life, maximize your health.</p><a href="#contact" class="round-link" aria-label="Schedule your first visit"><Icon name="arrow" size={19} /></a></div></div>
+          <div class="hero-heading"><p class="eyebrow"><span></span> SOUTH BURLINGTON, VERMONT</p><h1>Feel better. Move better.<br />With care that’s <span>truly yours.</span></h1><div class="hero-subline"><p>Enjoy life, maximize your health.</p><a href="#contact" class="button button-dark hero-primary">Book your first visit <Icon name="diagonal" size={19} /></a></div></div>
           <div class="hero-collage">
             <div class="doctor-teaser"><div class="teaser-heading"><strong>Since 2007</strong><span>Your local partner<br />in better health.</span></div><img src="/images/dr-paul-samuel.jpg" alt="Dr. Paul Samuel" width="350" height="321" /><a href="#doctor">Meet Dr. Paul <Icon name="arrow" size={15} /></a></div>
             <div class="hero-treatment"><img src="/images/chiropractic-care.jpg" alt="Hands-on chiropractic care" width="970" height="400" fetchpriority="high" /><div class="treatment-label"><span><Icon name="check" size={13} /> Gentle care</span><span><Icon name="check" size={13} /> Your goals first</span></div></div>
