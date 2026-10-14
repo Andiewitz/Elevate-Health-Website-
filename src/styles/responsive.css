@@ -12,7 +12,17 @@
   padding-inline: var(--gutter);
 }
 
-.header { height: var(--header-height); padding-block: 16px; gap: clamp(20px, 2.5vw, 48px); }
+.site-shell { overflow: visible; }
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  height: var(--header-height);
+  padding-block: 16px;
+  gap: clamp(20px, 2.5vw, 48px);
+  box-shadow: 0 1px 0 rgb(32 32 34 / 6%), 0 10px 24px rgb(32 32 34 / 0%);
+  transition: box-shadow .25s ease, background-color .25s ease;
+}
 .brand { width: clamp(160px, 12vw, 220px); }
 .brand img { width: 100%; height: auto; aspect-ratio: 4; }
 .brand > span { font-size: 8px; letter-spacing: 3px; }
