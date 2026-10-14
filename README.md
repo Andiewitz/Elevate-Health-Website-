@@ -4,8 +4,9 @@ A private Astro redesign for Elevate Health Chiropractic in South Burlington, Ve
 
 ## Project structure
 
-- `src/pages/index.astro` — homepage content and interactions
-- `src/styles/global.css` — responsive styling
+- `src/pages/index.astro` — homepage route
+- `src/components/Landing.astro` — homepage content and interactions
+- `src/styles/reference.css` — responsive styling based on the supplied visual reference
 - `src/components/Icon.astro` — small inline icon component
 - `public/images/` — downloaded assets from the original practice website
 - `dist/` — generated static build

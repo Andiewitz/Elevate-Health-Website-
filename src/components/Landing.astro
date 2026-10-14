@@ -1,0 +1,90 @@
+---
+import '@fontsource-variable/dm-sans';
+import '../styles/reference.css';
+import Icon from './Icon.astro';
+const reviews = [
+  { text: 'Dr. Paul Samuel is a kind, caring, and intuitive practitioner.', name: 'Mia A.', initials: 'MA' },
+  { text: 'He cares about my health and really considers my own needs in terms of treatment. I highly recommend him!', name: 'Chris B.', initials: 'CB' },
+  { text: 'Dr. Paul has gifted hands, and a great heart to go with them. Coming out of his office, I always feel cared for as well as better informed and motivated.', name: 'Mary Jane S.', initials: 'MS' },
+];
+const faqs = [
+  { q: 'What conditions do you work with?', a: 'Dr. Paul has experience with back and neck pain, headaches, disc issues, TMJ pain, knee and shoulder pain, and extremity injuries. Call to discuss your concerns and whether care is appropriate for you.' },
+  { q: 'Is care tailored to me?', a: 'Yes. Whether you are an athlete, a working professional, a student, a grandparent, or a parent, the care you receive is tailored to your needs. Dr. Paul explains your care and answers your questions along the way.' },
+  { q: 'Do you accept insurance?', a: 'We accept most insurance plans, including auto accident, personal injury, and workers’ compensation coverage. Providers include BCBS-VT, Cigna, Medicare, and Medicaid. Please call to verify your specific plan and coverage.' },
+  { q: 'Are same-day appointments available?', a: 'Same-day appointments are often available. Call (802) 557-8568 to check current availability and find a time that fits your schedule.' },
+  { q: 'Where can I find the office?', a: '595 Dorset Street, Suite 8, South Burlington, VT 05403. Use the same driveway as City Hall, then bear left.' },
+];
+const map = 'https://www.google.com/maps/search/?api=1&query=Elevate+Health+Chiropractic+595+Dorset+Street+South+Burlington+VT';
+const schema = { '@context': 'https://schema.org', '@type': 'MedicalBusiness', name: 'Elevate Health Chiropractic', telephone: '+1-802-557-8568', email: 'info@elevatehealthchiropractic.com', address: { '@type': 'PostalAddress', streetAddress: '595 Dorset Street, Suite 8', addressLocality: 'South Burlington', addressRegion: 'VT', postalCode: '05403', addressCountry: 'US' } };
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#252527" />
+    <meta name="description" content="Personalized chiropractic care with Dr. Paul Samuel in South Burlington, Vermont. Call (802) 557-8568 to schedule your visit." />
+    <meta property="og:title" content="Elevate Health Chiropractic | Feel better. Move better." />
+    <meta property="og:description" content="Gentle chiropractic care, tailored to you. Serving the greater Burlington community since 2007." />
+    <meta property="og:type" content="website" />
+    <title>Elevate Health Chiropractic | Feel Better, Move Better</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell" id="top">
+      <header class="header">
+        <a class="brand" href="#top" aria-label="Elevate Health Chiropractic home"><img src="/images/logo.png" alt="Elevate Health" width="200" height="50" /><span>CHIROPRACTIC</span></a>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button>
+        <nav id="navigation" aria-label="Main navigation">
+          <a href="#doctor">About us <span>⌄</span></a><a href="#care">Our care <span>⌄</span></a><a href="#patients">Patient resources <span>⌄</span></a><a href="#contact">Contact us <span>⌄</span></a>
+        </nav>
+        <a class="button button-dark header-book" href="#contact">Book an appointment <Icon name="diagonal" size={13} /></a>
+      </header>
+      <main id="main">
+        <section class="hero">
+          <div class="hero-heading"><p class="eyebrow"><span></span> SOUTH BURLINGTON, VERMONT</p><h1>Feel better. Move better.<br />With care that’s <span>truly yours.</span></h1><div class="hero-subline"><p>Enjoy life, maximize your health.</p><a href="#contact" class="round-link" aria-label="Schedule your first visit"><Icon name="arrow" size={19} /></a></div></div>
+          <div class="hero-collage">
+            <div class="doctor-teaser"><div class="teaser-heading"><strong>Since 2007</strong><span>Your local partner<br />in better health.</span></div><img src="/images/dr-paul-samuel.jpg" alt="Dr. Paul Samuel" width="350" height="321" /><a href="#doctor">Meet Dr. Paul <Icon name="arrow" size={15} /></a></div>
+            <div class="hero-treatment"><img src="/images/chiropractic-care.jpg" alt="Hands-on chiropractic care" width="970" height="400" fetchpriority="high" /><div class="treatment-label"><span><Icon name="check" size={13} /> Gentle care</span><span><Icon name="check" size={13} /> Your goals first</span></div></div>
+            <div class="symptom-widget"><details open><summary>What can we help with? <span><Icon name="plus" size={15} /></span></summary><div class="symptom-tags"><a href="#care">Back & neck pain <Icon name="diagonal" size={12} /></a><a href="#care">Headaches <Icon name="diagonal" size={12} /></a><a href="#care">Injury recovery <Icon name="diagonal" size={12} /></a><a href="#care">Family wellness <Icon name="diagonal" size={12} /></a></div></details></div>
+            <div class="quick-links"><span>YOUR NEXT STEP</span><a href="tel:+18025578568">Call our office <Icon name="phone" size={14} /></a><a href="#patients">Patient info <Icon name="arrow" size={14} /></a><a href={map} target="_blank" rel="noopener noreferrer">Find us <Icon name="pin" size={14} /></a><p><span></span> Same-day visits often available</p></div>
+          </div>
+          <div class="hero-foot"><p>Personalized chiropractic care for the greater Burlington community.</p><a href="#contact">Let’s get you feeling better <Icon name="diagonal" size={14} /></a></div>
+        </section>
+
+        <section class="reviews-section" aria-labelledby="reviews-title"><div class="section-inner"><div class="section-heading"><div><p class="eyebrow">GOOD CARE. REAL CONNECTIONS.</p><h2 id="reviews-title">Our community says it best.</h2></div><span class="section-caption">Patient experiences from Burlington, VT</span></div><div class="review-grid">{reviews.map(review => <figure><span class="review-quote" aria-hidden="true">“</span><blockquote>{review.text}</blockquote><figcaption><span class="avatar">{review.initials}</span><span><strong>{review.name}</strong><small>Burlington, VT</small></span></figcaption></figure>)}</div><div class="review-foot"><span>Care that listens. Support that feels personal.</span><a href="tel:+18025578568">Talk to us <Icon name="arrow" size={15} /></a></div></div></section>
+
+        <section class="care-section rounded-section" id="care"><div class="section-inner"><div class="section-heading"><div><p class="eyebrow">YOUR LIFE. YOUR HEALTH.</p><h2>Care for the way you live.</h2><p class="section-description">Thoughtful, gentle care tailored to your needs.<br />For the everyday moments—and everything you want to get back to.</p></div><a class="round-link" href="#contact" aria-label="Ask about our chiropractic care"><Icon name="arrow" size={22} /></a></div>
+          <div class="care-bento">
+            <article class="care-card feature-card"><img src="/images/hands-on-care.jpg" alt="Gentle hands-on treatment" width="1500" height="795" loading="lazy" /><div class="card-content"><span class="card-kicker">01 / CHIROPRACTIC</span><h3>Good movement.<br />Better everyday living.</h3><p>Individual care for back and neck pain, headaches, disc issues, and TMJ discomfort. We listen first, then build your care around you.</p><div class="card-actions"><a class="button button-dark" href="#contact">Book an appointment <Icon name="diagonal" size={13} /></a><a class="text-link" href="#patients">Your questions, answered <Icon name="arrow" size={13} /></a></div></div></article>
+            <article class="care-card small-card"><span class="line-icon"><Icon name="diagonal" size={25} /></span><div><span class="card-kicker">02 / RECOVERY</span><h3>Get back to what you love.</h3><p>Support after trauma, sports injuries, and auto accidents—with exercises to strengthen problem areas.</p></div><a class="text-link" href="tel:+18025578568">Let’s talk <Icon name="arrow" size={13} /></a></article>
+            <article class="care-card small-card"><span class="line-icon"><Icon name="plus" size={25} /></span><div><span class="card-kicker">03 / ALL AGES</span><h3>Every stage.<br />Every kind of life.</h3><p>Care for athletes, students, professionals, grandparents, and growing families. Your unique needs come first.</p></div><a class="text-link" href="#doctor">Meet your chiropractor <Icon name="arrow" size={13} /></a></article>
+            <a class="insurance-card" href="#patients"><span><Icon name="check" size={20} /></span><div><h3>Most insurance plans accepted.</h3><p>BCBS-VT · Cigna · Medicare · Medicaid<br />Call to verify your coverage.</p></div><Icon name="diagonal" size={22} /></a>
+          </div>
+        </div></section>
+
+        <section class="doctor-section" id="doctor"><div class="section-inner doctor-layout"><div class="doctor-copy"><p class="eyebrow">A REAL PERSON IN YOUR CORNER</p><h2>Meet Dr. Paul.<br />Feel right at home.</h2><p>Dr. Paul Samuel has served Burlington, Shelburne, and the surrounding communities since 2007. He takes a thorough, gentle, and compassionate approach—with time to answer your questions and explain your care.</p><p>Inspired by chiropractic’s impact on his own family, he earned his Doctor of Chiropractic from Life University. He coordinates supportive care with your other health practitioners.</p><details class="bio-details"><summary>A little more about Dr. Paul <Icon name="plus" size={15} /></summary><p>Dr. Paul received his Bachelor of Science from the University of Wisconsin and his chiropractic degree from Life University College of Chiropractic in Marietta, Georgia. Continuing education includes sacro-occipital technique, applied kinesiology, cranial sacral manipulative reflex technique, nutritional therapy, pediatric adjusting, and extremity adjusting.</p><p>His experience includes pregnancy and pediatric care, sports and car accident injuries, ergonomics, and care for older adults.</p></details><a class="button button-dark" href="#contact">Make your first appointment <Icon name="diagonal" size={14} /></a></div><div class="doctor-display"><div class="doctor-capsule"><img src="/images/dr-paul-samuel.jpg" alt="Dr. Paul Samuel, Doctor of Chiropractic" width="350" height="321" loading="lazy" /></div><div class="doctor-name"><strong>Dr. Paul Samuel, DC</strong><span>Gentle care. Clear answers.</span></div><span class="doctor-stamp">LOCAL CARE<br /><strong>SINCE ’07</strong></span></div></div></section>
+
+        <section class="resources-section rounded-section"><div class="section-inner"><div class="section-heading"><div><p class="eyebrow">FEEL INFORMED. FEEL CONFIDENT.</p><h2>A little guidance goes a long way.</h2><p class="section-description">Simple answers to help you take your next step.<br />Your life, your health, and a plan that makes sense for you.</p></div></div><div class="resource-grid">
+          <article><div class="resource-image"><img src="/images/hands-on-care.jpg" alt="Gentle care in a treatment setting" width="1500" height="795" loading="lazy" /><span>YOUR CARE</span></div><div><h3>What is chiropractic care?</h3><p>Hands-on adjustments focus on joint movement. Your care and goals are discussed with Dr. Paul.</p><a class="text-link" href="#patients">Explore your questions <Icon name="arrow" size={13} /></a></div></article>
+          <article><div class="resource-image"><img src="/images/chiropractic-care.jpg" alt="Hands-on chiropractic adjustment" width="970" height="400" loading="lazy" /><span>YOUR PROGRESS</span></div><div><h3>Support beyond your visit.</h3><p>Learn exercises to strengthen problem areas and help prevent injury as you work toward your goals.</p><a class="text-link" href="#contact">Talk about your goals <Icon name="arrow" size={13} /></a></div></article>
+          <article><div class="resource-image landscape"><img src="/images/vermont-sky.jpg" alt="Clouds and open sky" width="1500" height="1000" loading="lazy" /><span>YOUR FIRST STEP</span></div><div><h3>Make room for feeling better.</h3><p>Flexible scheduling and same-day appointments often available. Let’s find a time that fits your life.</p><a class="text-link" href="tel:+18025578568">Check availability <Icon name="arrow" size={13} /></a></div></article>
+        </div></div></section>
+
+        <section class="faq-section" id="patients"><div class="faq-inner"><p class="eyebrow">LET’S MAKE IT SIMPLE</p><h2>A few things you might be wondering.</h2><div class="faq-list">{faqs.map(faq => <details><summary>{faq.q}<span>⌄</span></summary><p>{faq.a}</p></details>)}</div><a class="button button-white" href="tel:+18025578568">Talk to us <Icon name="arrow" size={14} /></a></div></section>
+      </main>
+      <footer class="footer rounded-section" id="contact"><div class="footer-layout"><div class="booking-card"><div><h2>Your next step<br />starts here.</h2><Icon name="diagonal" size={30} /></div><p>Call to book your visit. Personalized care, clear answers, and a schedule that works for you.</p><a href="tel:+18025578568" class="button button-dark"><Icon name="phone" size={15} /> (802) 557-8568</a><span>Same-day appointments often available</span></div><div class="footer-info"><a class="brand" href="#top" aria-label="Elevate Health Chiropractic home"><img src="/images/logo.png" alt="Elevate Health" width="200" height="50" /><span>CHIROPRACTIC</span></a><a href="tel:+18025578568">(802) 557-8568</a><a class="email" href="mailto:info@elevatehealthchiropractic.com?subject=Appointment%20inquiry">info@elevatehealthchiropractic.com</a><address>595 Dorset Street, Suite 8<br />South Burlington, VT 05403</address><p>Same driveway as City Hall, then bear left.</p><a class="text-link" href={map} target="_blank" rel="noopener noreferrer">Get directions <Icon name="diagonal" size={13} /></a></div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Elevate Chiropractic, LLC</span><div><a href="https://www.facebook.com/elevatehealthchiropractic" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="#top">Back to top ↑</a></div></div></footer>
+    </div>
+    <div class="mobile-cta"><a href="tel:+18025578568"><Icon name="phone" size={16} /> Call to book <span>(802) 557-8568</span></a></div>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+      const nav = document.querySelector<HTMLElement>('#navigation');
+      const closeMenu = () => { toggle?.setAttribute('aria-expanded', 'false'); toggle?.setAttribute('aria-label', 'Open navigation'); nav?.classList.remove('open'); };
+      toggle?.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); nav?.classList.toggle('open', open); });
+      nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+      document.addEventListener('click', event => { if (event.target instanceof Node && !document.querySelector('.header')?.contains(event.target)) closeMenu(); });
+    </script>
+  </body>
+</html>
