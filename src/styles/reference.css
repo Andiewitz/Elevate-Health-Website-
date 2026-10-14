@@ -19,3 +19,14 @@
 .resource-grid .text-link,.small-card .text-link{font-size:11px}
 .faq-list summary{font-size:13px}
 @media(max-width:760px){.hero-collage{margin-top:120px}.symptom-widget{top:-102px}.symptom-tags>a{font-size:9px}.header-book{font-size:8px}.header nav a{font-size:12px}.menu-toggle{width:34px;height:34px;padding:9px}.card-actions .button{font-size:10px}.button{min-height:40px}.faq-list summary{font-size:12px}}
+
+/* Full-width sections with a readable content width. */
+:root{background:var(--paper)}
+body{padding:0}
+.site-shell{width:100%;max-width:none;margin:0;border-radius:0;box-shadow:none}
+.header,.hero,.section-inner{width:100%;max-width:1240px;margin-inline:auto}
+.rounded-section{border-radius:0;margin-top:0}
+.footer{padding-inline:max(72px,calc((100% - 1096px)/2))}
+@media(max-width:1050px){.footer{padding-inline:45px}}
+@media(max-width:760px){body{padding-bottom:calc(51px + env(safe-area-inset-bottom))}.footer{padding-inline:25px}}
+@media(max-width:390px){.footer{padding-inline:20px}}
